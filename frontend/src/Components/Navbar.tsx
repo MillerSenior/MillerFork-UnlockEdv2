@@ -9,7 +9,8 @@ import {
     ChevronDoubleLeftIcon,
     ChevronDoubleRightIcon,
     TrophyIcon,
-    UsersIcon
+    UsersIcon,
+    AcademicCapIcon
 } from '@heroicons/react/24/solid';
 import { useAuth } from '@/AuthContext';
 
@@ -57,13 +58,20 @@ export default function Navbar({
                         {/* admin view */}
                         <li className="mt-16">
                             <a href="/dashboard">
-                                <HomeIcon className="w-4" /> Dashboard
+                                <HomeIcon className="w-4" /> Home
+                            </a>
+                        </li>
+                        {/*Below nav url needs to be corrected*/}
+                        <li>
+                            <a href="/users">
+                                <AcademicCapIcon className="h-4" />
+                                Students
                             </a>
                         </li>
                         <li>
                             <a href="/users">
                                 <UsersIcon className="h-4" />
-                                Users
+                                Admins
                             </a>
                         </li>
                         <li>

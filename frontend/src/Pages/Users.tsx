@@ -6,7 +6,7 @@ import {
     ArrowPathRoundedSquareIcon,
     PencilIcon,
     TrashIcon,
-    UserPlusIcon
+    PlusIcon
 } from '@heroicons/react/20/solid';
 import { DEFAULT_ADMIN_ID, ServerResponse, User } from '../common';
 import AddUserForm from '../Components/forms/AddUserForm';
@@ -139,7 +139,15 @@ export default function Users() {
     };
 
     return (
-        <AuthenticatedLayout title="Users" path={['Users']}>
+        <AuthenticatedLayout title="Users" path={['Student Management']}>
+            <div className="flex flex-col space-y-6 overflow-x-auto rounded-lg p-4">
+                <div className="flex justify-between">
+                    <div className="flex flex-row gap-x-2">
+                        <h1 className="text-2xl">Student Management</h1>
+                    </div>
+                </div>
+            </div>
+
             <div className="flex flex-col space-y-6 overflow-x-auto rounded-lg p-4">
                 <div className="flex justify-between">
                     <div className="flex flex-row gap-x-2">
@@ -161,14 +169,16 @@ export default function Users() {
 
                     <div className="tooltip tooltip-left" data-tip="Add User">
                         <button
-                            className="btn btn-primary btn-sm"
+                            className="btn btn-primary btn-sm text-white" // Makes the text white
                             onClick={() => addUserModal.current?.showModal()}
                         >
-                            <UserPlusIcon className="h-4" />
+                            <PlusIcon className="h-4 border border-white rounded-full p-1 mr-2" />{' '}
+                            {/* Circular border around PlusIcon */}
+                            Add Student
                         </button>
                     </div>
                 </div>
-                <table className="table">
+                <table className="table-2">
                     <thead>
                         <tr className="border-gray-600">
                             <th className="flex">
